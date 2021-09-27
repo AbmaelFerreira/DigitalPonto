@@ -2,6 +2,9 @@ package com.digitalpontos.model;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 //Tudo isso também poderia ser alterado para @Data
 @Getter
 @Setter
@@ -9,8 +12,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class CategoriaUsuario {
 
+    @Id
     private long id;
     private String descricao;
 

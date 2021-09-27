@@ -2,8 +2,7 @@ package com.digitalpontos.model;
 
 import lombok.*;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -14,6 +13,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
 public class Movimentacao {
 
 
@@ -32,10 +32,15 @@ public class Movimentacao {
 
     @EmbeddedId
     private MovimentacaoId id;
+
+    @ManyToOne
     private Localidade dataEntrada;
+    @ManyToOne
     private Localidade dataSaida;
     private BigDecimal periodo;
+    @ManyToOne
     private Ocorrencia ocorrencia;
+    @ManyToOne
     private Calendario calendario;
 
 }

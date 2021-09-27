@@ -2,7 +2,8 @@ package com.digitalpontos.model;
 
 
 import lombok.*;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.math.BigDecimal;
@@ -16,6 +17,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class Usuario {
+
+    @Id
     private long id;
 
     @ManyToOne
@@ -32,6 +35,7 @@ public class Usuario {
 
     @ManyToOne
     private JornadaTrabalho jornadaTrabalho;
+
     private BigDecimal tolerancia;
     private LocalDateTime inicioJornada;
     private LocalDateTime finalJornada;
